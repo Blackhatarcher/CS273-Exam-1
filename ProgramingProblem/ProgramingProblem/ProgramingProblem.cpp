@@ -19,6 +19,7 @@ namespace Simulation // NAMESPACE
 	public:
 		Aircraft(int num_engines) {
 			// STEP 1: Complete the constructor in itialize member variable
+			this->num_engines = num_engines;
 		};
 		virtual void Description() = 0;      // Description is a pure virtual function
 	};
@@ -32,6 +33,7 @@ namespace Simulation // NAMESPACE
 		Engine() {}
 		void set_manuf(string manuf) {
 			// STEP 2: initialize the member variable
+			this->manuf = manuf;
 		}
 	};
 
@@ -41,8 +43,13 @@ namespace Simulation // NAMESPACE
 	class Glider : public Aircraft {
 	public:
 		// STEP 3: Complete the Glider Constructor
-
+		Glider(){
+			this->num_engines = 0;
+		}
 		// STEP 3: Complete the Glider Description() method
+		void Description() {
+			cout << "I am a Glider with " << num_engines << " engines.";
+		}
 	};
 
 	// STEP 4:  Define the Boeing777 class as described
