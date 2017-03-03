@@ -17,9 +17,12 @@ namespace Simulation // NAMESPACE
 	protected:
 		int num_engines;
 	public:
+		//I was getting a compiler error 
+		//says that I needed a default constructor
 		Aircraft() {
 			this->num_engines = 0;
 		}
+
 		Aircraft(int num_engines) {
 			// STEP 1: Complete the constructor in itialize member variable
 			this->num_engines = num_engines;
