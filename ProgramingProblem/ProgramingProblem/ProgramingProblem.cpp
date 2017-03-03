@@ -17,6 +17,9 @@ namespace Simulation // NAMESPACE
 	protected:
 		int num_engines;
 	public:
+		Aircraft() {
+			this->num_engines = 0;
+		}
 		Aircraft(int num_engines) {
 			// STEP 1: Complete the constructor in itialize member variable
 			this->num_engines = num_engines;
@@ -48,7 +51,7 @@ namespace Simulation // NAMESPACE
 		}
 		// STEP 3: Complete the Glider Description() method
 		void Description() {
-			cout << "I am a Glider with " << num_engines << " engines.";
+			cout << "I am a Glider with " << num_engines << " engines." << endl;
 		}
 	};
 
@@ -57,11 +60,18 @@ namespace Simulation // NAMESPACE
 	class Boeing777 : public Aircraft {
 	private:
 		// STEP 4: Define the member variables for the 777
+		string color;
 	public:
 
 		// STEP 4: Complete the Boeing777 Constructor
-
+		Boeing777(int num_engines, string color) {
+			this->num_engines = 2;
+			this->color = color;
+		}
 		// STEP 4: Complete the Boeing777 Description Method
+		void Description() {
+			cout << "I am a Boeing 777 with " << num_engines << " engines." << endl;
+		}
 	};
 }
 
